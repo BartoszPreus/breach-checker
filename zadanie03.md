@@ -53,3 +53,18 @@ Zadanie 3:
 root /usr/share/nginx/html;
 
 Kopiujemy pliki do /usr/share/nginx/html, ponieważ linia root w konfiguracji Nginx wskazuje ten folder jako miejsce, z którego serwer udostępnia pliki strony.
+
+
+Zadanie 4:
+docker exec zad4 ls /usr/share/nginx
+html
+index.html
+script.js
+style.css
+
+docker exec zad4 ls /usr/share/nginx/html
+50x.html
+build.txt
+index.html
+
+HTMLHint sprawdził domyślny plik Nginx pod ścieżką /usr/share/nginx/html/index.html i nie znalazł w nim błędów, dlatego budowanie się powiodło. Przez błędne COPY mój plik index.html trafił do /usr/share/nginx, więc nie został sprawdzony ani wyświetlony przez serwer.
