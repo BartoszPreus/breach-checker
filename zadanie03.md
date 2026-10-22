@@ -68,3 +68,14 @@ build.txt
 index.html
 
 HTMLHint sprawdził domyślny plik Nginx pod ścieżką /usr/share/nginx/html/index.html i nie znalazł w nim błędów, dlatego budowanie się powiodło. Przez błędne COPY mój plik index.html trafił do /usr/share/nginx, więc nie został sprawdzony ani wyświetlony przez serwer.
+
+
+Zadanie 5:
+docker rmi breach-checker-frontend:latest
+Untagged: breach-checker-frontend:latest
+
+docker rmi breach-checker-frontend:v2    
+Untagged: breach-checker-frontend:v2
+Deleted: sha256:79dde1aa2f8b860ef7e38c79fbb0adcd33c741e872348fc08abd98376f924bfe
+
+Usunięcie tagu latest nie usuwa obrazu, ponieważ nadal wskazuje na niego tag v2. Docker rmi usuwa obraz po usunięciu ostatniego tagu, jeśli nie korzysta z niego żaden kontener. Z dysku usuwane są tylko warstwy, które nie są potrzebne innym obrazom ani pamięci podręcznej budowania.
