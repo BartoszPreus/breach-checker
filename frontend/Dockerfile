@@ -1,5 +1,5 @@
 FROM nginx:alpine
-LABEL maintainer="BartoszPreus@users.noreply.github.com"
+LABEL maintainer="BartoszPreus@users.noreply.github.com" autor="Bartosz Preus" data="2026-10-16"
 RUN apk add --no-cache nodejs npm && npm install -g htmlhint
 COPY . /usr/share/nginx/html
 RUN htmlhint /usr/share/nginx/html/index.html
