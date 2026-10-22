@@ -33,3 +33,17 @@ ebe0a499dad1   30 minutes ago   EXPOSE [80/tcp]                                 
 <missing>      4 weeks ago      ADD alpine-minirootfs-3.24.2-x86_64.tar.gz /…   9.08MB    buildkit.dockerfile.v0
 
 Starsze wpisy pochodzą z nginx:alpine, a pięć najnowszych z mojego Dockerfile. Wpisy 0B zmieniają metadane bez dodawania plików. Moje maintainer nadpisuje wartość z bazy, dlatego inspect pokazuje tylko moją wartość.
+
+Zadanie 2
+http://localhost:32768/build.txt
+Thu Oct 22 17:16:43 UTC 2026
+
+http://localhost:8080/build.txt
+Thu Oct 22 17:16:43 UTC 2026
+
+docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+5e9e35ef2bd1   lab3-zad2:v1   "/docker-entrypoint.…"   7 minutes ago    Up 7 minutes    0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   lab3-zad2-kontener2
+91aee1c19027   lab3-zad2:v1   "/docker-entrypoint.…"   12 minutes ago   Up 12 minutes   0.0.0.0:32768->80/tcp                     lab3-zad2-kontener
+
+Czas zapisany w pliku build.txt jest identyczny w obu kontenerach, ponieważ utworzono je z tego samego obrazu. Polecenie date wykonano w instrukcji RUN podczas budowania obrazu, a jego wynik zapisano w pliku build.txt. Każdy kontener utworzony z tego obrazu otrzymuje ten plik z taką samą zawartością.
