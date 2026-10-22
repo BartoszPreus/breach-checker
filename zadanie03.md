@@ -47,3 +47,9 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS  
 91aee1c19027   lab3-zad2:v1   "/docker-entrypoint.…"   12 minutes ago   Up 12 minutes   0.0.0.0:32768->80/tcp                     lab3-zad2-kontener
 
 Czas zapisany w pliku build.txt jest identyczny w obu kontenerach, ponieważ utworzono je z tego samego obrazu. Polecenie date wykonano w instrukcji RUN podczas budowania obrazu, a jego wynik zapisano w pliku build.txt. Każdy kontener utworzony z tego obrazu otrzymuje ten plik z taką samą zawartością.
+
+
+Zadanie 3:
+root /usr/share/nginx/html;
+
+Kopiujemy pliki do /usr/share/nginx/html, ponieważ linia root w konfiguracji Nginx wskazuje ten folder jako miejsce, z którego serwer udostępnia pliki strony.
